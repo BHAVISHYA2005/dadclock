@@ -57,8 +57,13 @@ export default function SignUp() {
       }
 
       if (data?.user) {
-        // Redirect to dashboard (user is auto-logged in)
-        router.push('/dashboard');
+        // Check if email confirmation is required
+        // If user exists but session is null, email confirmation is needed
+        if (!data.session) {
+          router.push(`/verify-email?email=${encodeURIComponent(email)}`);
+        } else {
+          router.push('/dashboard');
+        }
       }
     } catch (err) {
       setError('An unexpected error occurred');

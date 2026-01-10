@@ -40,32 +40,32 @@ export default function VerifyEmail() {
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="w-full max-w-md px-4">
           <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-lg text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
 
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Check your email</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Verify your email</h1>
             <p className="text-gray-600 mb-6">
-              We've sent a verification link to <span className="font-semibold">{email}</span>
+              We've sent a verification link to <span className="font-semibold text-gray-900">{email}</span>
             </p>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-              <p className="text-gray-700 text-sm">
-                Click the link in your email to verify your account and get started.
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6 text-left">
+              <p className="text-gray-700 text-sm leading-relaxed">
+                <strong>Check your inbox:</strong> Look for an email from Dad Clock and click the verification link. Make sure to check your spam folder if you don't see it within a few minutes.
               </p>
             </div>
 
-            <p className="text-gray-600 text-sm">
-              Redirecting to dashboard in <span className="font-bold text-blue-600">{counter}</span> seconds...
+            <p className="text-gray-600 text-sm mb-6">
+              Once verified, you'll be able to access your dashboard and start creating schedules.
             </p>
 
             <Link
-              href="/dashboard"
-              className="inline-block mt-6 bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
+              href="/login"
+              className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
             >
-              Go to Dashboard
+              Back to Login
             </Link>
           </div>
         </div>
