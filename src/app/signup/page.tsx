@@ -57,12 +57,8 @@ export default function SignUp() {
       }
 
       if (data?.user) {
-        // Check if user needs email confirmation
-        if (data.user.user_metadata?.email_verified === false) {
-          router.push(`/verify-email?email=${email}`);
-        } else {
-          router.push('/dashboard');
-        }
+        // Redirect to dashboard (user is auto-logged in)
+        router.push('/dashboard');
       }
     } catch (err) {
       setError('An unexpected error occurred');
