@@ -58,6 +58,8 @@ export default function Home() {
             <Link href="/help" className="hover:text-gray-900">Help</Link>
             <Link href="/blog" className="hover:text-gray-900">Blog</Link>
             <Link href="/download" className="hover:text-gray-900">Download</Link>
+            <Link href="/login" className="text-blue-600 hover:text-blue-700 font-semibold">Login</Link>
+            <Link href="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Sign Up</Link>
           </nav>
         </div>
       </header>
