@@ -57,7 +57,6 @@ export default function Home() {
             <Link href="#features" className="hover:text-gray-900 transition">Features</Link>
             <Link href="/help" className="hover:text-gray-900 transition">Help</Link>
             <Link href="/blog" className="hover:text-gray-900 transition">Blog</Link>
-            <Link href="/download" className="hover:text-gray-900 transition">Download</Link>
             <Link href="/login" className="text-blue-600 hover:text-blue-700 font-semibold transition">Login</Link>
             <Link href="/signup" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg hover:shadow-lg transition">Sign Up</Link>
           </nav>
@@ -81,8 +80,8 @@ export default function Home() {
             Dad Clock keeps you on schedule — by blocking distractions and making sure you do what you said you would.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/download" className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:shadow-2xl transition transform hover:scale-105">
-              Download App
+            <Link href="/signup" className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:shadow-2xl transition transform hover:scale-105">
+              Get Started
             </Link>
             <Link href="#features" className="inline-block bg-white/20 backdrop-blur-md text-white border border-white/40 px-8 py-4 rounded-lg font-bold hover:bg-white/30 transition">
               Learn More
@@ -160,8 +159,8 @@ export default function Home() {
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
             Start doing what you said you would. He shouldn't have to ask twice.
           </p>
-          <Link href="/download" className="inline-block bg-white text-blue-600 px-10 py-4 rounded-lg font-bold hover:shadow-2xl transition transform hover:scale-105">
-            Download App
+          <Link href="/signup" className="inline-block bg-white text-blue-600 px-10 py-4 rounded-lg font-bold hover:shadow-2xl transition transform hover:scale-105">
+            Start Now
           </Link>
         </div>
       </section>
@@ -178,7 +177,7 @@ export default function Home() {
               <h4 className="font-bold text-gray-900 mb-4">Product</h4>
               <ul className="space-y-3">
                 <li><Link href="#features" className="text-gray-600 hover:text-blue-600 text-sm transition">Features</Link></li>
-                <li><Link href="/download" className="text-gray-600 hover:text-blue-600 text-sm transition">Download</Link></li>
+                <li><Link href="/signup" className="text-gray-600 hover:text-blue-600 text-sm transition">Get Started</Link></li>
                 <li><Link href="/blog" className="text-gray-600 hover:text-blue-600 text-sm transition">Blog</Link></li>
               </ul>
             </div>
