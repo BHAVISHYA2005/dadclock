@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import { useTheme } from '@/context/ThemeContext';
+import ThemeToggle from '@/components/ThemeToggle';
 import ScreenTimeChart from '@/components/analytics/ScreenTimeChart';
 import TopAppsCard from '@/components/analytics/TopAppsCard';
 import DailyStatsCard from '@/components/analytics/DailyStatsCard';
@@ -24,6 +26,7 @@ interface DailySummary {
 }
 
 export default function AnalyticsPage() {
+  const { theme } = useTheme();
   const [loading, setLoading] = useState(true);
   const [todayScreentime, setTodayScreentime] = useState(0);
   const [weeklyScreentime, setWeeklyScreentime] = useState(0);
@@ -131,13 +134,17 @@ export default function AnalyticsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 p-8">
+      <div className={`min-h-screen transition-colors duration-200 p-8 ${
+        theme === 'dark' 
+          ? 'bg-gradient-to-br from-slate-900 to-slate-800' 
+          : 'bg-gradient-to-br from-gray-50 to-gray-100'
+      }`}>
         <div className="max-w-6xl mx-auto">
           <div className="animate-pulse">
-            <div className="h-12 bg-slate-700 rounded w-1/3 mb-8"></div>
+            <div className={`h-12 rounded w-1/3 mb-8 ${theme === 'dark' ? 'bg-slate-700' : 'bg-gray-300'}`}></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div className="h-40 bg-slate-700 rounded"></div>
-              <div className="h-40 bg-slate-700 rounded"></div>
+              <div className={`h-40 rounded ${theme === 'dark' ? 'bg-slate-700' : 'bg-gray-300'}`}></div>
+              <div className={`h-40 rounded ${theme === 'dark' ? 'bg-slate-700' : 'bg-gray-300'}`}></div>
             </div>
           </div>
         </div>
@@ -147,9 +154,17 @@ export default function AnalyticsPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 p-8">
+      <div className={`min-h-screen transition-colors duration-200 p-8 ${
+        theme === 'dark' 
+          ? 'bg-gradient-to-br from-slate-900 to-slate-800' 
+          : 'bg-gradient-to-br from-gray-50 to-gray-100'
+      }`}>
         <div className="max-w-6xl mx-auto">
-          <div className="bg-red-900/20 border border-red-700 text-red-200 px-6 py-4 rounded-lg">
+          <div className={`border px-6 py-4 rounded-lg ${
+            theme === 'dark'
+              ? 'bg-red-900/20 border-red-700 text-red-200'
+              : 'bg-red-100 border-red-400 text-red-800'
+          }`}>
             {error}
           </div>
         </div>
@@ -158,11 +173,22 @@ export default function AnalyticsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 p-8">
+    <div className={`min-h-screen transition-colors duration-200 p-8 ${
+      theme === 'dark' 
+        ? 'bg-gradient-to-br from-slate-900 to-slate-800' 
+        : 'bg-gradient-to-br from-gray-50 to-gray-100'
+    }`}>
       <div className="max-w-6xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">Screen Time Analytics</h1>
-          <p className="text-slate-400">Track and analyze your device usage patterns</p>
+        <div className="mb-8 flex justify-between items-start">
+          <div>
+            <h1 className={`text-4xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+              Screen Time Analytics
+            </h1>
+            <p className={theme === 'dark' ? 'text-slate-400' : 'text-gray-600'}>
+              Track and analyze your device usage patterns
+            </p>
+          </div>
+          <ThemeToggle />
         </div>
 
         {/* Stats Cards */}
@@ -201,7 +227,11 @@ export default function AnalyticsPage() {
         {/* Refresh Button */}
         <button
           onClick={fetchAnalyticsData}
-          className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+          className={`px-6 py-2 rounded-lg transition-colors ${
+            theme === 'dark'
+              ? 'bg-blue-600 hover:bg-blue-700 text-white'
+              : 'bg-blue-500 hover:bg-blue-600 text-white'
+          }`}
         >
           Refresh Data
         </button>
