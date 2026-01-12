@@ -62,7 +62,7 @@ export default function WeeklyTrendChart({ data }: WeeklyTrendChartProps) {
 
       <div className="mt-6 pt-6 border-t border-slate-600">
         <p className="text-sm text-slate-400">
-          Usage is <span className={trendDirection === 'increasing' ? 'text-red-400' : 'text-green-400'} className="font-semibold">
+          Usage is <span className={`${trendDirection === 'increasing' ? 'text-red-400' : 'text-green-400'} font-semibold`}>
             {trendDirection} {trendPercent}%
           </span> compared to earlier in the week
         </p>
