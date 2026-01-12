@@ -55,6 +55,7 @@ export default function Home() {
           <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Dad Clock</div>
           <nav className="hidden md:flex gap-8 text-gray-700">
             <Link href="#features" className="hover:text-gray-900 transition">Features</Link>
+            <Link href="/analytics" className="hover:text-gray-900 transition">Analytics</Link>
             <Link href="/help" className="hover:text-gray-900 transition">Help</Link>
             <Link href="/blog" className="hover:text-gray-900 transition">Blog</Link>
             <Link href="/login" className="text-blue-600 hover:text-blue-700 font-semibold transition">Login</Link>
